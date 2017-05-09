@@ -41,7 +41,7 @@ Jarvis: Chaine arrêtée.
 
 3) Add this plugin to your <a target="_blank" href="http://domotiquefacile.fr/jarvis/">Jarvis assistant</a> (<a target="_blank" href="http://domotiquefacile.fr/jarvis/content/plugins">more info here</a>): ```./jarvis.sh -p https://github.com/QuentinCG/jarvis-radio-tv```
 
-4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-radio-tv/blob/master/config.sh">configuration file</a> to match your requirements (you can get the card and peripheral with `aplay -l`).
+4) Configure the <a target="_blank" href="https://github.com/QuentinCG/jarvis-radio-tv/blob/master/config.sh">configuration file</a> to match your requirements (you can add as many radio/TV stream as you want).
 
 5) Enjoy
 
