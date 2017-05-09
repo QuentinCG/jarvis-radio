@@ -13,7 +13,7 @@ jv_pg_rt_show_audio_stream_list()
     audio_stream_list="${audio_stream_list}${audio_stream}"
   done  <<< "$json_list"
 
-  say "$(jv_pg_rt_lang audio_list $audio_stream_list)"
+  say "$(jv_pg_rt_lang audio_list "$audio_stream_list")"
 }
 
 # Say the list of all video stream
@@ -29,7 +29,7 @@ jv_pg_rt_show_video_stream_list()
     video_stream_list="${video_stream_list}${video_stream}"
   done  <<< "$json_list"
 
-  say "$(jv_pg_rt_lang video_list $video_stream_list)"
+  say "$(jv_pg_rt_lang video_list "$video_stream_list")"
 }
 
 # Play an audio stream (web radio, radio, ...)
