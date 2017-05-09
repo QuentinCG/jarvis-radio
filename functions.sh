@@ -38,13 +38,13 @@ jv_pg_rt_show_video_stream_list()
 # return (int): 0 if stream name found, 1 if not found
 jv_pg_rt_play_audio_stream()
 {
-  local requested_audio="$1" #"$(jv_sanitize "$1")"
+  local requested_audio="$(jv_sanitize "$1")"
   local audio_stream_url=""
   local json_list=`echo "$var_jv_pg_rt_audio_stream_list" | jq -c '.[]'`
 
   while read i; do
     local audio_stream=`echo "$i" | jq -r ".name"`
-    if [ "$requested_audio" == "$audio_stream" ]; then
+    if [ "$requested_audio" == "$(jv_sanitize "$audio_stream")" ]; then
       local audio_stream_url=`echo "$i" | jq -r ".address"`
       nohup cvlc "$audio_stream_url" >/dev/null 2>/dev/stdout & disown
       return 0
@@ -67,13 +67,13 @@ jv_pg_rt_play_video_stream()
   fi
 
   # Launch the stream
-  local requested_video="$1" #"$(jv_sanitize "$1")"
+  local requested_video="$(jv_sanitize "$1")"
   local video_stream_url=""
   local json_list=`echo "$var_jv_pg_rt_video_stream_list" | jq -c '.[]'`
 
   while read i; do
     local video_stream=`echo "$i" | jq -r ".name"`
-    if [ "$requested_video" == "$video_stream" ]; then
+    if [ "$requested_video" == "$(jv_sanitize "$video_stream")" ]; then
       local video_stream_url=`echo "$i" | jq -r ".address"`
       nohup cvlc $full_screen "$video_stream_url" >/dev/null 2>/dev/stdout & disown
       return 0
