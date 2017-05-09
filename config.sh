@@ -17,7 +17,7 @@ var_jv_pg_rt_audio_stream_list='[
 ]'
 
 # Video stream (TV, ...)
-# Non exhaustive TV list: https://sourcetv.info/france-working-free-iptv-url-rtmp-m3u-smart-tv-kodi-list-08052017/
+# Non exhaustive TV list: https://sourcetv.info/category/europe-iptv/france-iptv/
 var_jv_pg_rt_video_stream_list='[
     {"name": "TF1", "address": "http://www.q7t1.com:8000/live/dona/dona/207.ts"},
     {"name": "France 2", "address": "http://www.q7t1.com:8000/live/dona/dona/208.ts"},
