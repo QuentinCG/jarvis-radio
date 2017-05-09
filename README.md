@@ -8,23 +8,27 @@ Play/Stop a radio, TV or any internet stream with <a target="_blank" href="http:
 ## Usage
 ```
 You: Liste les radios
-Jarvis: Liste des radios: ..., ..., ...
+Jarvis: Liste des radios: Alpes 1 Grenoble, Classic Rock, BFM, Chérie FM, Europe 1, France Bleu Isère, Fun Radio, NRJ, Virgin Radio.
 
 You: Liste les chaines TV
-Jarvis: Liste des chaines TV: ..., ..., ...
+Jarvis: Liste des chaines TV: TF1, France 2, France 3, France 4, France 5, France O, M6.
 
-You: Lance la radio NRJ
-Javis: Radio NRJ lancée.
+You: Lance la radio
+Jarvis: Quelle radio voulez vous lancer ?
+You: NRJ
+Javis: La radio NRJ va bientot se lancer.
 [Après quelques secondes, la radio se lance]
 
 You: Arrête la radio
 Jarvis: Radio arrêtée.
 
-You: Lance la chaine TF1
+You: Lance la télévision
+Jarvis: Quelle chaine voulez vous lancer ?
+You: TF1
 Javis: Chaine TF1 lancée.
 [Après quelques secondes, la chaine se lance]
 
-You: Arrête la chaine
+You: Arrête la télévision
 Jarvis: Chaine arrêtée.
 ```
 
