@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
+# Say the list of all audio stream
 jv_pg_rt_show_audio_stream_list()
 {
-  json_list=`echo "$var_jv_pg_rt_audio_stream_list" | jq -c '.[]'`
-  audio_stream_list=""
+  local json_list=`echo "$var_jv_pg_rt_audio_stream_list" | jq -c '.[]'`
+  local audio_stream_list=""
   while read i; do
-    audio_stream=`echo "$i" | jq -r ".name"`
+    local audio_stream=`echo "$i" | jq -r ".name"`
     if [ -n "$audio_stream_list" ]; then
       audio_stream_list="$audio_stream_list, "
     fi
@@ -16,12 +17,13 @@ jv_pg_rt_show_audio_stream_list()
   echo "$audio_stream_list"
 }
 
+# Say the list of all video stream
 jv_pg_rt_show_video_stream_list()
 {
-  json_list=`echo "$var_jv_pg_rt_video_stream_list" | jq -c '.[]'`
-  video_stream_list=""
+  local json_list=`echo "$var_jv_pg_rt_video_stream_list" | jq -c '.[]'`
+  local video_stream_list=""
   while read i; do
-    video_stream=`echo "$i" | jq -r ".name"`
+    local video_stream=`echo "$i" | jq -r ".name"`
     if [ -n "$video_stream_list" ]; then
       video_stream_list="$video_stream_list, "
     fi
@@ -34,14 +36,30 @@ jv_pg_rt_show_video_stream_list()
 
 # Play an audio stream (web radio, radio, ...)
 # $1 (string): Audio stream name
+#
+# return (int): 0 if stream name found, 1 if not found
 jv_pg_rt_play_audio_stream()
 {
-  # TODO: Use audio stream name
-  nohup cvlc $1 >/dev/null 2>/dev/stdout & disown
+  local requested_audio="$1" #"$(jv_sanitize "$1")"
+  local audio_stream_url=""
+  local json_list=`echo "$var_jv_pg_rt_audio_stream_list" | jq -c '.[]'`
+
+  while read i; do
+    local audio_stream=`echo "$i" | jq -r ".name"`
+    if [ "$requested_audio" == "$audio_stream" ]; then
+      local audio_stream_url=`echo "$i" | jq -r ".address"`
+      nohup cvlc "$audio_stream_url" >/dev/null 2>/dev/stdout & disown
+      return 0
+    fi
+  done  <<< "$json_list"
+
+  return 1
 }
 
 # Play a video stream (TV, ...)
 # $1 (string): Video stream name
+#
+# return (int): 0 if stream name found, 1 if not found
 jv_pg_rt_play_video_stream()
 {
   # Check if showing video as full screen or not
@@ -51,8 +69,20 @@ jv_pg_rt_play_video_stream()
   fi
 
   # Launch the stream
-  # TODO: Use video stream name
-  nohup cvlc $full_screen $1 >/dev/null 2>/dev/stdout & disown
+  local requested_video="$1" #"$(jv_sanitize "$1")"
+  local video_stream_url=""
+  local json_list=`echo "$var_jv_pg_rt_video_stream_list" | jq -c '.[]'`
+
+  while read i; do
+    local video_stream=`echo "$i" | jq -r ".name"`
+    if [ "$requested_video" == "$video_stream" ]; then
+      local video_stream_url=`echo "$i" | jq -r ".address"`
+      nohup cvlc $full_screen "$video_stream_url" >/dev/null 2>/dev/stdout & disown
+      return 0
+    fi
+  done  <<< "$json_list"
+
+  return 1
 }
 
 # Stop a launched stream
