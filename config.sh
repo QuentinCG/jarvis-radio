@@ -11,8 +11,13 @@ var_jv_pg_rt_audio_stream_list='[
     {"name": "Europe 1", "address": "http://mp3lg3.scdn.arkena.com/10489/europe1.mp3"},
     {"name": "France Bleu Isère", "address": "http://direct.francebleu.fr/live/fbisere-midfi.mp3"},
     {"name": "Fun radio", "address": "http://streaming.radio.funradio.fr:80/fun-1-44-128"},
-    {"name": "NRJ", "address": "http://cdn.nrjaudio.fm/adwz1/fr/30043/aac_64.mp3"},
-    {"name": "Virgin Radio", "address": "http://mp3lg4.tdf-cdn.com/9243/lag_164753.mp3"}
+    {"name": "NRJ", "address": "http://nrjreunion.ice.infomaniak.ch/nrjreunion-128.mp3"},
+    {"name": "Virgin Radio", "address": "http://mp3lg4.tdf-cdn.com/9243/lag_164753.mp3"},
+    {"name": "Free Dom", "address":"http://freedomice.streamakaci.com/freedom.mp3"},
+    {"name": "Freedom", "address":"http://freedomice.streamakaci.com/freedom.mp3"},
+    {"name": "Exo fm", "address": "http://exofm.ice.infomaniak.ch/exofm-64.aac"},
+    {"name": "Réunion 1ère", "address": "http://radios.la1ere.fr/reunion"},
+    {"name": "Réunion première", "address": "http://radios.la1ere.fr/reunion"}
 ]'
 
 # Video stream (IPTV, ...)
@@ -25,11 +30,11 @@ var_jv_pg_rt_audio_stream_list='[
 # If you want a paid IPTV (very stable): http://iptv-france.com/
 var_jv_pg_rt_video_stream_list='[
     {"name": "TF1", "address": "http://www.q7t1.com:8000/live/dona/dona/207.ts"},
-    {"name": "France 2", "address": "http://www.q7t1.com:8000/live/dona/dona/208.ts"},
-    {"name": "France 3", "address": "http://www.q7t1.com:8000/live/dona/dona/209.ts"},
-    {"name": "France 4", "address": "http://www.q7t1.com:8000/live/dona/dona/820.ts"},
-    {"name": "France 5", "address": "http://www.q7t1.com:8000/live/dona/dona/210.ts"},
+    {"name": "France deux", "address": "http://www.q7t1.com:8000/live/dona/dona/208.ts"},
+    {"name": "France trois", "address": "http://www.q7t1.com:8000/live/dona/dona/209.ts"},
+    {"name": "France quatre", "address": "http://www.q7t1.com:8000/live/dona/dona/820.ts"},
+    {"name": "France cinq", "address": "http://www.q7t1.com:8000/live/dona/dona/210.ts"},
     {"name": "France O", "address": "http://www.q7t1.com:8000/live/dona/dona/228.ts"},
-    {"name": "M6", "address": "http://www.q7t1.com:8000/live/dona/dona/216.ts"},
+    {"name": "M six", "address": "http://www.q7t1.com:8000/live/dona/dona/216.ts"},
     {"name": "Amazing Facts TV", "address": "http://bglive-w.bitgravity.com/amazingfacts/live/feed01"}
 ]'

@@ -1,8 +1,8 @@
-*ARRET*RADIO*==jv_pg_rt_stop_stream && say "Radio arrêtée."
-*ARRET*TV*|*ARRET*TELE*|*ARRET*CHAINE*==jv_pg_rt_stop_stream && say "Chaine arrêtée."
+*ARRET*RADIO*|*ETEIN*RADIO*==jv_pg_rt_stop_stream && say "Radio arrêtée."
+*ARRET*TV*|*ETEIN*TV*|*ARRET*TELE*|*ETEIN*TELE*|*ARRET*CHAINE*==jv_pg_rt_stop_stream && say "Chaine arrêtée."
 *LIST*RADIO*==jv_pg_rt_show_audio_stream_list
 *LIST*TV*|*LIST*TELE*|*LIST*CHAINE*==jv_pg_rt_show_video_stream_list
-*RADIO*==say "Quelle radio voulez vous lancer ?"
+*ALLUM*RADIO*|*LANCE*RADIO*==say "Quelle radio voulez vous lancer ?"
 >(*)==radio="(1)" && jv_pg_rt_play_audio_stream "$radio" && say "La radio $radio va bientot se lancer."
 *TV*|*TELE*|*CHAINE*|==say "Quelle chaine voulez vous lancer ?"
 >(*)==chaine="(1)" && jv_pg_rt_play_video_stream "$chaine" && say "La chaine $chaine va bientot se lancer."

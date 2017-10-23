@@ -50,6 +50,10 @@ Jarvis: Chaine arrêtée.
 [Quentin Comte-Gaz](http://quentin.comte-gaz.com/)
 
 
+## Contributors
+[djgsi974](https://github.com/djgsi974)
+
+
 ## License
 
 This project is under MIT license. This means you can use it as you want (just don't delete the plugin header).
